@@ -1,4 +1,4 @@
-var intervalIds: {[key: number]: any} = {}
+var intervalIds: { [key: number]: any } = {};
 
 self.onmessage = function (e) {
   switch (e.data.command) {
@@ -6,27 +6,27 @@ self.onmessage = function (e) {
       var intvalId = setInterval(function () {
         postMessage({
           message: 'interval:tick',
-          id: e.data.id
-        })
-      }, e.data.interval)
+          id: e.data.id,
+        });
+      }, e.data.interval);
 
       postMessage({
         message: 'interval:started',
-        id: e.data.id
-      })
+        id: e.data.id,
+      });
 
-      intervalIds[e.data.id] = intvalId
-      break
+      intervalIds[e.data.id] = intvalId;
+      break;
 
     case 'interval:clear':
-      clearInterval(intervalIds[e.data.id])
+      clearInterval(intervalIds[e.data.id]);
 
       postMessage({
         message: 'interval:cleared',
-        id: e.data.id
-      })
+        id: e.data.id,
+      });
 
-      delete intervalIds[e.data.id]
-      break
+      delete intervalIds[e.data.id];
+      break;
   }
-}
+};
