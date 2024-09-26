@@ -1,6 +1,6 @@
 {
   "name": "vue3-timers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Web Worker implementation of setTimeout and setInterval for Vue3",
   "keywords": [
     "setInterval",
