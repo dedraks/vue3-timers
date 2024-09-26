@@ -48,4 +48,4 @@ var vue3Timer = {
 
 worker.onmessage = vue3Timer.onMessage.bind(vue3Timer);
 
-export default vue3Timer;
+export default { vue3Timer };
